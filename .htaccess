@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# No sobreescriba Directorios
+RewriteCond %{REQUEST_FILENAME}% !-d
+
+# No sobreescriba Archivos (imagenes)
+RewriteCond %{REQUEST_FILENAME}% !-f
+
+# Reescribir la ruta de aquellas que tengan un caracter o mas
+# Cambiar al enviar a produccion
+RewriteRule ^(.+)$ index.php [QSA,L]

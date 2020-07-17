@@ -6,5 +6,11 @@ RewriteCond %{REQUEST_FILENAME}% !-d
 # No sobreescriba Archivos (imagenes)
 RewriteCond %{REQUEST_FILENAME}% !-f
 
+# Permitir acceso a las fuentes
+RewriteCond "%{REQUEST_URI}" !/public/font/*.*
+
+# Permitir acceso a los documentos
+RewriteCond "%{REQUEST_URI}" !/public/docs/*.pdf|(.+)\.pdf
+
 # Reescribir la ruta de aquellas que tengan un caracter o mas
 RewriteRule ^(.+)$ index.php [QSA,L]

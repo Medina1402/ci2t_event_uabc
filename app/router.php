@@ -8,7 +8,7 @@ $router = new Router("public/");
 
 // HOME
 $router->get("/", function(Request $req, Response $res) {
-    $res->render("home.php");
+    $res->render("home.html");
 });
 
 // CONFERENCES
@@ -17,7 +17,7 @@ $conferences = ["cocsce", "coee", "icip", "mst", "sasssi"];
 foreach ($conferences as $conference) {
     // FtoF
     $router->get("/$conference", function(Request $req, Response $res) use ($conference) {
-        $res->render("$conference.html");
+        $res->send("<h1>$conference.html</h1><a href='/$conference/virtual'><h1>Virtual</h1></a>");
     });
 
     // Virtual

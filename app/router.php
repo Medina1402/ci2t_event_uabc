@@ -6,10 +6,22 @@ include_once "MicroPHP/Response.php";
 
 $router = new Router("public/");
 
+// HOME
 $router->get("/", function(Request $req, Response $res) {
-    $res->render("index.html");
+    $res->render("home.php");
 });
 
-$router->get("/home", function(Request $req, Response $res) {
-    $res->render("home.html");
-});
+// CONFERENCES
+$conferences = ["cocsce", "coee", "icip", "mst", "sasssi"];
+
+foreach ($conferences as $conference) {
+    // FtoF
+    $router->get("/$conference", function(Request $req, Response $res) use ($conference) {
+        $res->render("$conference.html");
+    });
+
+    // Virtual
+    $router->get("/$conference/virtual", function(Request $req, Response $res) use ($conference) {
+        $res->send("conference virtual: $conference");
+    });
+}

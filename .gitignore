@@ -1,3 +1,5 @@
 .idea
+design
 src/*/*.js
 src/*/*.css
+public/*.html

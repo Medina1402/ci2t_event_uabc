@@ -46,6 +46,8 @@
     background-color transparent
     border 1px solid transparent
     padding 1em 1.5em
+    text-space 4px
+    cursor pointer
 
 .btn-primary
     background-color white
@@ -66,3 +68,43 @@ p
     margin-bottom 2em
 
 @import "navbar.styl"
+
+.conferences
+    padding-bottom 4em
+    h1
+        padding-bottom 1em
+
+.conference
+    padding 1em
+    font-family Roboto
+    margin 2em 0
+    display grid
+    grid-template-columns 3em 1fr
+    grid-gap 1em
+    align-items center
+    transition 200ms
+    &:hover
+        transition 200ms
+        transform translate(-1em, -1em)
+        box-shadow 0.5em 0.5em 2px rgba(black, 0.05)
+    a, .description
+        grid-column 2 / 3
+    .description
+        font-size 1.5em
+        text-align justify
+    *
+        margin 0
+        padding 0
+
+    i
+        height 3em
+        background var(--color-accent)
+        display flex
+        justify-content center
+        align-items center
+        font-family BebasNeue
+        font-weight bold
+        text-space 4px
+
+#footer
+    padding 4em

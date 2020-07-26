@@ -54,3 +54,36 @@ La estructura del proyecto es la siguiente:
 * La carpeta public servira los archivos que tendra disponible el enrutador.
 * La carpeta src sera ignorada al llevar el proyecto a produccion.
 * Los archivos *.css y *.js iran incrustados en el *.html (se incrustan los recursos necesarios con *.pug).
+---
+Para lograr incrustar variables en el html se opto por convertir todos los *.html en *.pdf, para evitar tener que instalar un nuevo recurso se opto por un script con bash:
+~~~bash
+while(true); do
+  rm -rf public/*.php;
+  for var in public/*.html; do
+    file=${var%.html}.php;
+    cp $var $file;
+  done
+  sleep 5
+done
+~~~
+Cada 5 segundos copiaremos todos los archivos html y cambiaremos solo su formato, para usar una variable podemos hacer lo siguiente:
+* Para no modificar el archivo final directamente, modificaremos en *.pug
+~~~bash
+# index.pug
+
+html
+body
+    section
+        <?php $props["name"] ?>
+~~~
+
+La variable la pasamos desde nuestro enrutador:
+~~~php
+# router.php
+
+$router->get("/", function(Request $req, Response $res) {
+    $res->render("home.php", Array(
+        "name" => "Medina"
+    ));
+});
+~~~

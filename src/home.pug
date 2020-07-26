@@ -3,7 +3,7 @@ html(lang="es")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Home
+        title CI2T :: Congreso Internacional de Tecnologia Tijuana ::: home
         style
             include css/home.css
     body
@@ -13,8 +13,8 @@ html(lang="es")
                 h2 congreso internacional <br>de tecnologia tijuana
                 h3.accent baja california, mexico | 24 - 26 oct
                 .btn-option
-                    button.btn.btn-secondary Visitar la cede del evento
-                    button.btn.btn-primary Hospedaje cerca de la zona
+                    button.btn.btn-secondary Cede del evento
+                    button.btn.btn-primary Conferencia virtual
         section#about.container
             h1 La <span class="accent">cede del ci2t</span> <br>sera en las instalaciones <br>de la <span class="highlight">uabc</span>
             p Organizado por la Facultad de Ciencias Químicas e Ingeniería, como una plataforma de diseminación bilingüe para profesores, investigadores, estudiantes, graduados, y profesionistas, donde trabajos teoricos y/o prácticos serán presentados, además de promover nexos entre expertos y la industria.
@@ -26,19 +26,31 @@ html(lang="es")
             .conferences
                 .conference#cocsce
                     i 3er
-                    p Jornada de Informática e Informática e Ingeniería
+                    p.simposio Jornada de Informática e Informática e Ingeniería
+                    p.description All submitted papers with be held under peer review before acceptance to the conference. Accepted papers will be either chosen for oral presentation or for poster presentation, depending on the quality and contribution of submitted work...
+                    a(href="/cocsce") Leer mas
                 .conference#coee
                     i 3er
-                    p Conferencia sobre Ingeniería Electrónica
+                    p.simposio Conferencia sobre Ingeniería Electrónica
+                    p.description All submitted papers with be held under peer review before acceptance to the conference. Accepted papers will be either chosen for oral presentation or for poster presentation, depending on the quality and contribution of submitted work...
+                    a(href="/coee") Leer mas
                 .conference#icip
                     i 3er
-                    p Congreso Internacional de Proyectos Industriales
+                    p.simposio Congreso Internacional de Proyectos Industriales
+                    p.description All submitted papers with be held under peer review before acceptance to the conference. Accepted papers will be either chosen for oral presentation or for poster presentation, depending on the quality and contribution of submitted work...
+                    a(href="/icip") Leer mas
                 .conference#mst
                     i 3er
-                    p Conferencia sobre Ciencias Químicas y Tecnología
+                    p.simposio Conferencia sobre Ciencias Químicas y Tecnología
+                    p.description All submitted papers with be held under peer review before acceptance to the conference. Accepted papers will be either chosen for oral presentation or for poster presentation, depending on the quality and contribution of submitted work...
+                    a(href="/mst") Leer mas
                 .conference#sasssi
                     i 1er
-                    p Simposio sobre ciencias aplicadas para resolver los problemas de la sociedad
+                    p.simposio Simposio sobre ciencias aplicadas para resolver los problemas de la sociedad
+                    p.description All submitted papers with be held under peer review before acceptance to the conference. Accepted papers will be either chosen for oral presentation or for poster presentation, depending on the quality and contribution of submitted work...
+                    a(href="/sasssi") Leer mas
+
+        section.container#footer
 
         script
             include js/index.js

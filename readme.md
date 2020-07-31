@@ -1,4 +1,5 @@
-### Para modificaciones en desarrollo deben contar con las siguientes herramientas <i>(o modificar html, css y js "de manera nativa")</i>:
+### Configuracion del proyecto
+Para modificaciones en desarrollo deben contar con las siguientes herramientas <i>(o modificar html, css y js "de manera nativa")</i>:
 
 * [NodeJs](https://nodejs.org/es/) ::: Ejecuta compilado (descargar del sitio)
 * [Pug](https://pugjs.org/api/getting-started.html) -> html
@@ -27,19 +28,19 @@ tsc -w ./src/js/*.ts --outDir ./src/js
 stylus -w ./src/css/*.styl --include-css --compress -o ./src/css
 
 # transpilado de stylus a pure css: *.styl -> *.css
-pug -w ./src/*.pug -o ./public
+pug -w ./src/*.pug -E php -o ./public
 ~~~
 
-Se puede ejecutar el comenado en una sola sentencia desde terminal linux:
+Se puede ejecutar el comenado en una sola sentencia desde terminal:
 ~~~bash
-tsc -w ./src/js/*.ts --outDir ./src/js & stylus -w ./src/css/*.styl --include-css --compress -o ./src/css & pug -w ./src/*.pug -o ./public
+tsc -w ./src/js/*.ts --outDir ./src/js & stylus -w ./src/css/*.styl --include-css --compress -o ./src/css & pug -w ./src/*.pug -E php -o ./public
 ~~~
 ---
 La estructura del proyecto es la siguiente:
 ~~~bash
 +--- MicroPHP
 \--- public
-    +--- index.html
+    +--- index.php
 \--- src
     +--- components
     +--- css
@@ -54,30 +55,11 @@ La estructura del proyecto es la siguiente:
 * La carpeta public servira los archivos que tendra disponible el enrutador.
 * La carpeta src sera ignorada al llevar el proyecto a produccion.
 * Los archivos *.css y *.js iran incrustados en el *.html (se incrustan los recursos necesarios con *.pug).
+
 ---
-Para lograr incrustar variables en el html se opto por convertir todos los *.html en *.pdf, para evitar tener que instalar un nuevo recurso se opto por un script con bash:
-~~~bash
-while(true); do
-  rm -rf public/*.php;
-  for var in public/*.html; do
-    file=${var%.html}.php;
-    cp $var $file;
-  done
-  sleep 5
-done
-~~~
-Cada 5 segundos copiaremos todos los archivos html y cambiaremos solo su formato, para usar una variable podemos hacer lo siguiente:
-* Para no modificar el archivo final directamente, modificaremos en *.pug
-~~~bash
-# index.pug
+### Variables en nuestra vista renderizada
+Para variables desde el backend a nuestra plantilla y renderizar en el servidor (SSR), pasamos las variables desde nuestro enrutador:
 
-html
-body
-    section
-        <?php $props["name"] ?>
-~~~
-
-La variable la pasamos desde nuestro enrutador:
 ~~~php
 # router.php
 

@@ -1,0 +1,1 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>CI2T :: <?php echo strtoupper($props['conference']); ?></title></head><body><h1><?php echo $props['conference']; ?></h1><a href=<?php echo $props['conference'];?>/virtual> Virtual </a></body></html>

@@ -5,27 +5,44 @@ include_once "MicroPHP/Request.php";
 include_once "MicroPHP/Response.php";
 
 $router = new Router("public/");
-
-// HOME
-$router->get("/", function(Request $req, Response $res) {
-    $res->render("home.php");
-});
-
-// CONFERENCES
 $conferences = ["cocsce", "coee", "icip", "mst", "sasssi"];
+$languages = Array(
+    "es" => "/",
+    "en" => "/en/"
+);
 
-foreach ($conferences as $conference) {
-    // FtoF
-    $router->get("/$conference", function(Request $req, Response $res) use ($conference) {
-        $res->render("$conference.php", Array(
-            "conference" => $conference
-        ));
+/**
+ * Contains all instances for the language renderer of views
+ * -> Select the language first and then render
+ */
+foreach ($languages as $path => $lang) {
+    /**
+     * Render Home
+     */
+    $router->get("/".str_replace("/", "", $lang), function(Request $req, Response $res) use ($path) {
+        /**
+         * Import language for page and render
+         */
+        $res->render("index.php", include("lang/$path/home.php"));
     });
 
-    // Virtual
-    $router->get("/$conference/virtual", function(Request $req, Response $res) use ($conference) {
-        $res->render("$conference-virtual.php", Array(
-            "conference" => $conference
-        ));
-    });
+
+    /**
+     * Render Conferences
+     */
+    foreach ($conferences as $conference) {
+        /**
+         * face to face
+         */
+        $router->get("$lang$conference", function(Request $req, Response $res) use ($conference, $path) {
+            $res->render("$conference.php", include("lang/$path/conf/$conference.php"));
+        });
+
+        /**
+         * Virtual
+         */
+        $router->get("$lang$conference", function(Request $req, Response $res) use ($conference, $path) {
+            $res->render("$conference.php", include("lang/$path/conf/$conference.php"));
+        });
+    }
 }

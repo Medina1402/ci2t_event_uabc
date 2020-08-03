@@ -35,14 +35,14 @@ foreach ($languages as $path => $lang) {
          * face to face
          */
         $router->get("$lang$conference", function(Request $req, Response $res) use ($conference, $path) {
-            $res->render("$conference.php", include("lang/$path/conf/$conference.php"));
+            $res->render("conference.php", include("lang/$path/conf/$conference.php"));
         });
 
         /**
          * Virtual
          */
-        $router->get("$lang$conference", function(Request $req, Response $res) use ($conference, $path) {
-            $res->render("$conference.php", include("lang/$path/conf/$conference.php"));
+        $router->get("$lang$conference/virtual", function(Request $req, Response $res) use ($conference, $path) {
+            $res->render("conference_virtual.php", include("lang/$path/virtual/$conference.php"));
         });
     }
 }

@@ -5,5 +5,20 @@ html(lang="es")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title CI2T :: <?php echo strtoupper($props['conference']); ?>
     body
-        h1 <?php echo $props['conference']; ?>
-        <a href=<?php echo $props['conference'];?>/virtual> Virtual </a>
+        include components/navbar.pug
+
+        section.container
+            h1 <?php echo $props['conference']; ?>
+            <a href=<?php echo $props['conference'];?>/virtual> Virtual </a>
+            h1#title <?php echo $props['title'];?>
+            p.description <?php echo $props['description'];?>
+            .topics
+                <?php foreach($props['topic'] as $topic) { ?>
+                .topic
+                    h2 <?php echo $topic["title"]; ?>
+                    <?php foreach($topic['item'] as $item) { ?>
+                    p <?php echo $item; ?>
+                    <?php } ?>
+                <?php } ?>
+
+        include components/footer.pug

@@ -2,16 +2,16 @@
 return Array(
     #Links languages
     "links" => array(
-        "es" => array("/icip", true),
-        "en" => array("/en/icip", false)
+        "es" => array("/cocsce", false),
+        "en" => array("/en/cocsce", true)
     ),
 
-    "conference" => "icip",
-    "title" => "3ER CONGRESO INTERNACIONAL DE PROYECTOS INDUSTRIALES",
+    "conference" => "cst",
+    "title" => "titulo de cocsce",
     "description" => "seccion de descripcion",
     "topic" => Array(
         Array(
-            "title" => "",
+            "title" => "ingernieria de spftware",
             "item" => Array(
                 "Herramienta de software para asistencia docente",
                 "Arquitectura de software"

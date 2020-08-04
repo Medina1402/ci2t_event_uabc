@@ -6,7 +6,7 @@ return Array(
         "en" => array("/en", false)
     ),
 
-    "conference" => "sasssi",
+    "conference" => "cst",
     "title" => "3RD CONFERENCE ON COMPUTER SCIENCE AND COMPUTER ENGINEERING",
     "items" => Array(
         Array(

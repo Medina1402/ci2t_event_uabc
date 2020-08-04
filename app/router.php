@@ -5,7 +5,7 @@ include_once "MicroPHP/Request.php";
 include_once "MicroPHP/Response.php";
 
 $router = new Router("public/");
-$conferences = ["cocsce", "coee", "icip", "mst", "sasssi"];
+$conferences = ["cocsce", "coee", "icip", "cst", "sasssi"];
 $languages = Array(
     "es" => "/",
     "en" => "/en/"

@@ -11,7 +11,7 @@ html(lang="es")
             h2 <?php echo $props['name_event']; ?>
             h3.accent <?php echo $props['event_location']; ?>
             .btn-option
-                <a href="<?php echo $props['link_home_opt_primary'] ?>" class="btn btn-secondary">
+                <a href="<?php echo $props['link_home_opt_primary']; ?>" class="btn btn-secondary">
                     <?php echo $props['home_opt_primary'] ?>
                 </a>
                 <a href="<?php echo $props['link_home_opt_secondary'] ?>" class="btn btn-primary">
@@ -39,3 +39,5 @@ html(lang="es")
                 <?php } ?>
             button#download_poster
                 a(href="public/images/CI2T_2020_CFP.png" target="_blank") <?php echo $props['conf_dw_pt'] ?>
+
+        include components/footer.pug

@@ -5,11 +5,12 @@ nav
             h2 Programa
     .center
     .end
-        .idioma
-            a(href="/en" class="link lang")
-                h2 EN
-            a(href="/" class="link lang active")
-                h2 ES
+        .languages
+            <?php foreach($props["links"] as $link => $p) { ?>
+                <a <?php echo "href=$p[0]"; if($p[1]) echo " class='active lang'"; else echo " class='lang'" ?> >
+                    h2 <?php echo strtoupper($link); ?>
+                </a>
+            <?php } ?>
         .burger
             .line
             .line

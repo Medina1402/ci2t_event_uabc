@@ -1,5 +1,11 @@
 <?php
     return Array(
+        #Links languages
+        "links" => Array(
+            "es" => Array("/", false),
+            "en" => Array("/en", true)
+        ),
+
         # Section Home
         "name_event" => "Congreso Internacional <br>de Tecnologia Tijuana",
         "event_location" => "Baja California, Mexico | 24 - 26 Oct",
@@ -54,4 +60,3 @@
             )
         )
     );
-?>

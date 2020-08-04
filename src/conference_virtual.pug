@@ -5,4 +5,17 @@ html(lang="es")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title CI2T :: <?php echo strtoupper($props['conference']); ?> - Virtual
     body
-        h1 <?php echo $props['conference']; ?>
+        include components/navbar.pug
+
+        section.container
+            h1 <?php echo $props['title'];?>
+            .items
+                <?php foreach($props['items'] as $item) { ?>
+                .item
+                    h2 <?php echo $item["title"]; ?>
+                    <?php foreach($item["authors"] as $author) { ?>
+                    p <?php echo $author["name"]; ?>
+                    <?php } ?>
+                <?php } ?>
+
+        include components/footer.pug

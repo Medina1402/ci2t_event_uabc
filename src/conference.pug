@@ -4,10 +4,20 @@ html(lang="es")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title CI2T :: <?php echo strtoupper($props['conference']); ?>
+
+        link(href="/public/css/fonts.css" rel="stylesheet")
+        style
+            include ../src/css/colors.css
+            include ../src/css/default.css
+            include ../src/css/scroll.css
+            include ../src/css/header.css
+            include ../src/css/footer.css
+
     body
         include components/navbar.pug
+        include components/main.pug
 
-        section.container
+        section.container(style="padding-top: var(--size-header)")
             h1 <?php echo $props['conference']; ?>
             <a href=<?php echo $props['conference'];?>/virtual> Virtual </a>
             h1#title <?php echo $props['title'];?>
@@ -21,4 +31,6 @@ html(lang="es")
                     <?php } ?>
                 <?php } ?>
 
-        include components/footer.pug
+        include components/footer
+
+        script(src="/public/js/header.js")

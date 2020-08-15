@@ -1,17 +1,20 @@
-nav
+header#header
     .start
-        h1#logo CI2T
-        a(href="/public/images/CI2T-2020_general-program.png" target="_blank" class="link")
-            h2 Programa
+        <a href=<?php echo $props["home"]; echo " class='linkUppercase'" ?> >
+            h1#logo CI2T
+        </a>
+        .line
+        a(href="/public/images/CI2T-2020_general-program.png" target="_blank" class="linkUppercase")
+            h4 Programa
     .center
     .end
         .languages
             <?php foreach($props["links"] as $link => $p) { ?>
-                <a <?php echo "href=$p[0]"; if($p[1]) echo " class='active lang'"; else echo " class='lang'" ?> >
+                <a <?php echo "href=$p[0]"; if($p[1]) echo " class='active linkUppercase'"; else echo " class='linkUppercase'" ?> >
                     h2 <?php echo strtoupper($link); ?>
                 </a>
             <?php } ?>
-        .burger
+        button#burger
             .line
             .line
             .line

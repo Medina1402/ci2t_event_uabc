@@ -1,5 +1,8 @@
 <?php
 return Array(
+    #link home page
+    "home" => "/",
+
     #Links languages
     "links" => array(
         "es" => array("/coee", true),

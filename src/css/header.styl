@@ -1,0 +1,75 @@
+:root
+  --size-header 6em
+
+.linkUppercase
+  text-transform uppercase
+
+a.active
+  color white !important
+
+header
+  position absolute
+  display grid
+  grid-template-columns repeat(3, 1fr)
+  background-color black
+  padding 0 5%
+  width 90%
+  height var(--size-header)
+  align-items center
+  *
+    font-family BebasNeue
+    font-weight bold
+
+  .start
+    display flex
+    align-items center
+    .line
+      width 1px
+      height 2em
+      margin 0 1em
+      background-color white
+    a
+      display flex
+      justify-content flex-end
+      align-items center
+      color white
+
+  .end
+    display flex
+    justify-content flex-end
+    align-items center
+
+    button
+      width 3em
+      height 1.8em
+      background-color transparent
+      margin-left 1em
+      outline none
+      cursor pointer
+      user-select none
+      display grid
+      justify-items flex-end
+      grid-gap 0.3em
+      .line
+        width 100%
+        height 100%
+        background-color white
+        &:nth-child(2)
+          width 70%
+
+    .languages
+      display flex
+      a
+        color rgba(255, 255, 255, 0.5)
+        margin 0 0.25em
+
+
+#main
+  position fixed
+  width 100%
+  background-color black
+  top var(--size-header)
+  height calc(100vh - var(--size-header))
+
+.showMain
+  display none

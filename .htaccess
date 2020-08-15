@@ -15,5 +15,11 @@ RewriteCond "%{REQUEST_URI}" !/public/docs/*.pdf|(.+)\.pdf
 # Permitir acceso a las imagenes <PNG>
 RewriteCond "%{REQUEST_URI}" !/public/images/*.png|(.+)\.png
 
+# Permitir acceso <CSS>
+RewriteCond "%{REQUEST_URI}" !/public/css/*.css|(.+)\.css
+
+# Permitir acceso <JS>
+RewriteCond "%{REQUEST_URI}" !/public/css/*.js|(.+)\.js
+
 # Reescribir la ruta de aquellas que tengan un caracter o mas
 RewriteRule ^(.+)$ index.php [QSA,L]

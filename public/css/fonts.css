@@ -1,0 +1,23 @@
+@font-face {
+    font-family: BebasNeue;
+    src: url("../font/BebasNeue-Regular.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: BebasNeue;
+    src: url("../font/BebasNeue-Bold.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("../font/Roboto-Regular.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("../font/Roboto-Bold.ttf");
+    font-weight: bold;
+}

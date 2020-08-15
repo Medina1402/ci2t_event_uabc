@@ -1,11 +1,22 @@
 <!DOCTYPE html>
+head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title CI2T - Congreso Internacional de Tecnologia Tijuana
+
+    link(href="/public/css/fonts.css" rel="stylesheet")
+    style
+        include ../src/css/colors.css
+        include ../src/css/default.css
+        include ../src/css/scroll.css
+        include ../src/css/header.css
+        include ../src/css/home.css
+        include ../src/css/footer.css
+
 html(lang="es")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title CI2T - Congreso Internacional de Tecnologia Tijuana
     body
         include components/navbar.pug
+        include components/main.pug
 
         section#info
             h2 <?php echo $props['name_event']; ?>
@@ -19,25 +30,27 @@ html(lang="es")
                 </a>
         
         section#about.container
-            h1 <?php echo $props['about_h1']; ?>
+            h1.bigText <?php echo $props['about_h1']; ?>
             p <?php echo $props['about_p']; ?>
-            a(class="link" href="http://www.uabc.mx/" target="_blank")
-                p.accent <?php echo $props['about_to_visit']; ?>
+            p.link
+                a(href="http://www.uabc.mx/" target="_blank" class="accent") <?php echo $props['about_to_visit']; ?>
 
         section#conferences.container.white
-            h1 <?php echo $props['conf_h1']; ?>
+            h1.bigText <?php echo $props['conf_h1']; ?>
             .conferences
                 <?php foreach($props['conferences'] as $conferenceId => $conference) { ?>
                 <div class="conference" id=<?php echo $conferenceId; ?>>
-                    i <?php echo $conference['esimo']; ?>
+                    .nth <?php echo $conference['esimo']; ?>
                     p.title <?php echo $conference['title']; ?>
                     p.description <?php echo $conference['description']; ?>
-                    <a href="<?php echo $conference['link'] ?>">
+                    p.more
+                        <a href=<?php echo $conference['link'] ?> class="accent" >
                         <?php echo $conference['text_link'] ?>
-                    </a>
+                        </a>
                 </div>
                 <?php } ?>
-            button#download_poster
-                a(href="public/images/CI2T_2020_CFP.png" target="_blank") <?php echo $props['conf_dw_pt'] ?>
+            a#download_poster(href="public/images/CI2T_2020_CFP.png" target="_blank") <?php echo $props['conf_dw_pt'] ?>
 
-        include components/footer.pug
+        include components/footer
+
+        script(src="/public/js/header.js")

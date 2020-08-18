@@ -9,6 +9,10 @@ return Array(
         "en" => array("/en/cocsce", false)
     ),
 
+    #Link Download Poster
+    "poster" => "/public/images/CoCSCE_CFP.png",
+
+    #Content Body
     "conference" => "cocsce",
     "title" => "3ER CONFERENCIA SOBRE INFORMÁTICA E INGENIERÍA INFORMÁTICA",
     "description" => "La Conferencia sobre Ciencias de la Computación e Ingeniería Informática 2020 (CoCSCE'20) se lleva a cabo bajo el Congreso Internacional de Investigación de Tijuana (Congreso Internacional de Investigación Tijuana) organizado por la Universidad Autónoma de Baja California. Este evento bilingüe (español-inglés) sirve para atraer a estudiantes e investigadores con avances en ingeniería y ciencia en las áreas de Ciencias de la Computación e Ingeniería en Computación, además de ser un punto de encuentro con el objetivo de crear canales de comunicación entre sus asistentes, ya que Tijuana es ubicado en una ubicación geográfica estratégica cerca de muchos centros de investigación y universidades. Todos los documentos presentados se llevarán a cabo bajo revisión por pares antes de ser aceptados en la conferencia. Los trabajos aceptados serán elegidos para presentación oral o para presentación de póster",

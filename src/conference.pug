@@ -12,25 +12,31 @@ html(lang="es")
             include ../src/css/scroll.css
             include ../src/css/header.css
             include ../src/css/footer.css
+            include ../src/css/conference.css
 
     body
         include components/navbar.pug
         include components/main.pug
 
-        section.container(style="padding-top: var(--size-header)")
-            h1 <?php echo $props['conference']; ?>
-            <a href=<?php echo $props['conference'];?>/virtual> Virtual </a>
+        section.container
             h1#title <?php echo $props['title'];?>
+            h2 <?php echo $props['conference']; ?>
             p.description <?php echo $props['description'];?>
             .topics
                 <?php foreach($props['topic'] as $topic) { ?>
                 .topic
-                    h2 <?php echo $topic["title"]; ?>
-                    <?php foreach($topic['item'] as $item) { ?>
-                    p <?php echo $item; ?>
-                    <?php } ?>
+                    h4 <?php echo $topic["title"]; ?>
+                        span →
+                    ul
+                        <?php foreach($topic['item'] as $item) { ?>
+                        li <?php echo $item; ?>
+                        <?php } ?>
                 <?php } ?>
 
+            .options
+                <a class="download_poster" href=<?php echo $props['poster']; echo "> Download Poster"; ?></a>
+                <a class="download_poster" href=<?php echo $props['conference'];?>/virtual> <?php echo strtoupper($props['conference']);?> Virtual </a>
         include components/footer
 
         script(src="/public/js/header.js")
+        script(src="/public/js/conference.js")

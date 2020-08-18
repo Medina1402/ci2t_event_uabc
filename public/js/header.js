@@ -25,7 +25,6 @@ const ScrollEnable = () => {
     }
     if (windowScrollPX == 0) {
         header.style.position = "absolute";
-        header.style.top = "0";
     }
     lastTopScroll = window.scrollY;
 };

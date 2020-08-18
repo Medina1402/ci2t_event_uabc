@@ -1,0 +1,70 @@
+#header
+  filter invert(1) !important
+
+.container
+  padding var(--size-header) 15% 10em 15%
+  font-family Roboto
+
+  h1
+    margin 1em 0
+    text-transform uppercase
+    text-align center
+    font-size 2.5em
+    line-height 1.1em
+
+  h2
+    padding 0.5em 0
+    text-transform uppercase
+    color var(--color-accent)
+
+  p
+    font-size 1.5em
+    text-align justify
+
+.topics
+  margin 3em 0
+
+.topic
+  margin 1em 0 2em 0
+
+  h4
+    display flex
+    align-items center
+    justify-content space-between
+    padding 0.5em 0
+    font-size 1.5em
+    text-transform uppercase
+    cursor pointer
+    color var(--color-accent)
+
+    &:hover
+      color black
+
+    span
+      user-select none
+      font-size 2em
+
+  .description
+    text-align justify
+
+  li
+    list-style none
+    padding 0.5em 2em
+    font-size 1.2em
+
+  ul
+    display none
+    transition 200ms
+
+.toggle_topic
+  transition 200ms
+  display inline-block !important
+
+.options
+  display flex
+  flex-wrap wrap
+  align-items center
+  justify-content center
+  margin-top 5em
+  *
+    margin 1em 0.5em

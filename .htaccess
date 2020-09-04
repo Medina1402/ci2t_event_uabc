@@ -14,6 +14,7 @@ RewriteCond "%{REQUEST_URI}" !/public/docs/*.pdf|(.+)\.pdf
 
 # Permitir acceso a las imagenes <PNG>
 RewriteCond "%{REQUEST_URI}" !/public/images/*.png|(.+)\.png
+RewriteCond "%{REQUEST_URI}" !/public/images/*.jpg|(.+)\.jpg
 
 # Permitir acceso <CSS>
 RewriteCond "%{REQUEST_URI}" !/public/css/*.css|(.+)\.css

@@ -20,13 +20,14 @@ html(lang="es")
 
         section.container
             h1#title <?php echo $props['title'];?>
+            img(src="/public/images/img7.jpg" style="padding-bottom: 3em" width="100%100%")
             h2 <?php echo $props['conference']; ?>
             p.description <?php echo $props['description'];?>
             .topics
                 <?php foreach($props['topic'] as $topic) { ?>
                 .topic
                     h4 <?php echo $topic["title"]; ?>
-                        span →
+                        span(style="font-size:1em") +
                     ul
                         <?php foreach($topic['item'] as $item) { ?>
                         li <?php echo $item; ?>

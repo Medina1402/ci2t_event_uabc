@@ -2,7 +2,7 @@ let topics: any = document.querySelector(".topics")
 
 /**
  *
- * @param e
+ * @param e Event
  */
 topics.onclick = (e) => {
     if(e.target.tagName !== "H4") return

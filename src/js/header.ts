@@ -19,6 +19,8 @@ const EventBurgerMenu = () => {
     isNotActive = main.classList.toggle("showMain")
     if (!isNotActive) lastTopScroll = window.scrollY
 
+    if(window.location.pathname != "/") document.getElementById("main").style.filter = "invert(1)"
+
     return (!isNotActive)
         ? window.onscroll = () => window.scrollTo(0, lastTopScroll)
         : window.onscroll = () => ScrollEnable()

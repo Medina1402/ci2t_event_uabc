@@ -19,15 +19,17 @@ html(lang="es")
         include components/main.pug
 
         section#info
-            h2 <?php echo $props['name_event']; ?>
-            h3.accent <?php echo $props['event_location']; ?>
-            .btn-option
-                <a href="<?php echo $props['link_home_opt_primary']; ?>" class="btn btn-secondary">
-                    <?php echo $props['home_opt_primary'] ?>
-                </a>
-                <a href="<?php echo $props['link_home_opt_secondary'] ?>" class="btn btn-primary">
-                    <?php echo $props['home_opt_secondary'] ?>
-                </a>
+            .container
+                h1 <?php echo $props['name_event']; ?>
+                h2.accent <?php echo $props['event_location']; ?>
+                .btn-option
+                    <a href="<?php echo $props['link_home_opt_primary']; ?>" class="btn btn-secondary">
+                        <?php echo $props['home_opt_primary'] ?>
+                    </a>
+                    <a href="<?php echo $props['link_home_opt_secondary'] ?>" class="btn btn-primary">
+                        <?php echo $props['home_opt_secondary'] ?>
+                    </a>
+            .mouse-down
         
         section#about.container
             h1.bigText <?php echo $props['about_h1']; ?>
@@ -54,3 +56,4 @@ html(lang="es")
         include components/footer
 
         script(src="/public/js/header.js")
+        script(src="/public/js/home.js")

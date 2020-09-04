@@ -69,3 +69,17 @@ $router->get("/", function(Request $req, Response $res) {
     ));
 });
 ~~~
+
+---
+
+## Capturas de avance
+
+![Home](screenshots/Capturadepantalla10.png)
+
+![Home](screenshots/Capturadepantalla11.png)
+
+![Home](screenshots/Capturadepantalla12.png)
+
+![Home](screenshots/Capturadepantalla13.png)
+
+![Home](screenshots/Capturadepantalla14.png)
